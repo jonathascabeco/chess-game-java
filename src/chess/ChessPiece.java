@@ -8,6 +8,7 @@ public abstract class ChessPiece extends Piece {
 	
 	// abstract pode ser reutilizada por outra classe;
 	private Color color;
+	private int moveCount; // começa com valor zero, sem necessidade de instaurar no construtor;
 
 	public ChessPiece(Board board, Color color) {
 		super(board);
@@ -17,6 +18,18 @@ public abstract class ChessPiece extends Piece {
 	public Color getColor() {
 		return color;
 	}	
+	
+	public int getMoveCount(){
+		return moveCount;
+	}
+	
+	public void increaseMoveCount() {
+		moveCount++;
+	}
+	
+	public void decreaseMoveCount() {
+		moveCount--;
+	}
 	
 	  public ChessPosition getChessPosition() {
 		  return ChessPosition.fromPosition(position);
